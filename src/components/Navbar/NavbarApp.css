@@ -1,0 +1,31 @@
+.stylish-text {
+    font-family: "Arial", sans-serif;
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .stylish-text:hover,
+  .stylish-text:focus {
+    color: #ffff00;
+    cursor: pointer;
+  }
+
+  .stylish{
+    font-family: "Arial", sans-serif;
+    font-size: 14px;
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 1px ;
+    transition: color 0.3s ease-in-out;
+    color: #ffff00;
+  }
+  
+  .stylish:hover,
+  .stylish:focus {
+    color: #000000;
+    cursor: pointer;
+  }

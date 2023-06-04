@@ -1,0 +1,91 @@
+.home {
+    position: relative;
+    height: 100vh;
+  }
+
+  .stylish-text {
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .stylish-text:hover,
+  .stylish-text:focus {
+    color: #ffff00;
+    cursor: pointer;
+  }
+  
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .centered-content {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .buttons {
+    position: absolute;
+    top: 200px;
+    right: -150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .buttons button {
+    margin-left: 10px;
+  }
+  img {
+    max-width: 70%;
+    height: auto;
+  }
+  
+  .background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+.btn-primary1 {
+  background-color: #009dff;
+  color: #000000;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-primary1:hover {
+  background-color: #ffff00;
+}
+
+.btn-secondary1 {
+  background-color: #009dff;
+  color: #000000;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-left: 4px;
+  cursor: pointer;
+}
+
+.btn-secondary1:hover {
+  background-color: #ffff00;
+}
+
+

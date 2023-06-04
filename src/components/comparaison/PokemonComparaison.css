@@ -1,0 +1,27 @@
+.pokemon-comparison-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .pokemon-stats p {
+    margin: 5px 0;
+  }
+  
+  .input-container {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  .top1{
+    margin-top: 80px;
+    margin-left: 34%;
+  }
+  .top1 h4{
+    margin-left: 80px;
+  }
+  .comparison-result{
+    margin-left: 20%;
+  }
+  img {
+    max-width: 60%;
+    height: auto;
+  }

@@ -1,0 +1,54 @@
+.top{
+  margin-top: 80px;
+}
+.horizontal-line {
+  height: 2px;
+  background: #ccc;
+  width: 50%;
+  margin: 20px 0;
+  border: none;
+  transition: width 0.3s ease-in-out;
+}
+
+.horizontal-line {
+  height: 2px;
+  background: blue;
+  width: 50%;
+  margin: 20px auto;
+  border: none;
+  position: relative;
+}
+
+.horizontal-line::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url('../../assets/pokemon-logo-png-1447.png');
+  background-size: cover;
+}
+.favorites-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.favorites-header button {
+  margin-left: 5px;
+}
+
+.pokemon-card1 {
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+.titre{
+  margin-left: 24px;
+}
