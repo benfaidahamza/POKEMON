@@ -12,12 +12,11 @@ function ListePokemon(){
        const [search,setSearch]=useState([''])
        const [searchResults, setSearchResults] = useState([]);
        const [favorites, setFavorites] = useState([])
-       
        const [offset, setOffset] = useState(() => {
         const storedOffset = localStorage.getItem('offset');
         return storedOffset ? parseInt(storedOffset) : 0;
        });
-       
+
        useEffect(() => {
         const favs = localStorage.getItem('favorites')
         console.log(favs)
