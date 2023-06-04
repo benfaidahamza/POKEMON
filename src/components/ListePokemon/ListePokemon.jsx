@@ -7,27 +7,35 @@ import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 
 function ListePokemon(){
-       const [offset, setOffset] = useState(0);
        const limit=12;
        const [pokemonList, setPokemonList] = useState([]);
        const [search,setSearch]=useState([''])
        const [searchResults, setSearchResults] = useState([]);
        const [favorites, setFavorites] = useState([])
-
+       
+       const [offset, setOffset] = useState(() => {
+        const storedOffset = localStorage.getItem('offset');
+        return storedOffset ? parseInt(storedOffset) : 0;
+       });
+       
        useEffect(() => {
         const favs = localStorage.getItem('favorites')
         console.log(favs)
         if (favs) {
             setFavorites(JSON.parse(favs))
-            console.log(favorites)
         }
        }, [])
-       
+      // ce bloc de code pose un problème, comme on a déjà vu en semaine de cours, il vide le local storage
       //  useEffect(() => {
       //   // setFavorites(favorites)
       //   console.log(favorites)
       //   localStorage.setItem('favorites', JSON.stringify(favorites))
       //   }, [favorites])
+
+      useEffect(() => {
+        localStorage.setItem('offset', offset.toString());
+        fetchPokemonList();
+       }, [offset]);
 
        useEffect(() => {
         fetchPokemonList();
