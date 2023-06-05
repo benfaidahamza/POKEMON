@@ -13,7 +13,7 @@ function ListePokemon(){
        const [searchResults, setSearchResults] = useState([]);
        const [favorites, setFavorites] = useState([])
        const [offset, setOffset] = useState(() => {
-        const storedOffset = localStorage.getItem('offset');
+       const storedOffset = localStorage.getItem('offset');
         return storedOffset ? parseInt(storedOffset) : 0;
        });
 
@@ -35,16 +35,12 @@ function ListePokemon(){
         localStorage.setItem('offset', offset.toString());
         fetchPokemonList();
        }, [offset]);
-
-       useEffect(() => {
-        fetchPokemonList();
-        }, [offset]);
     
-        useEffect(() => {
+      useEffect(() => {
             if (search.length % 3 === 0) {
              fetchPokemonListTotal();
              }
-         }, [search]);
+      }, [search]);
          
         const handleAdd = (pokemon) => {
           const isExisting = favorites.some((fav) => fav.id === pokemon.id);

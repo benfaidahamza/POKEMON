@@ -40,6 +40,7 @@ function MonPokedex(){
     try {
       let response;
       if(search.length!==0){
+        //si n'est pas un nombre
         if (isNaN(search)) {
         response = await fetch(`https://pokeapi.co/api/v2/pokemon/${search.toLowerCase()}`);
         } else {

@@ -5,7 +5,7 @@ import './PokemonComparaison.css';
 const PokemonComparison = () => {
   const [pokemon1, setPokemon1] = useState('');
   const [pokemon2, setPokemon2] = useState('');
-  const [comparisonResult, setComparisonResult] = useState('');
+  const [comparaisonResult, setComparaisonResult] = useState('');
   const [pokemon1Stats, setPokemon1Stats] = useState(null);
   const [pokemon2Stats, setPokemon2Stats] = useState(null);
   const [src, setSrc] = useState('');
@@ -44,25 +44,21 @@ const PokemonComparison = () => {
         const stats1 = data1.stats;
         setSrc(data1.sprites.other["official-artwork"].front_default);
         setName(data1.name);
-
         const response2 = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon2}`);
         const data2 = await response2.json();
         const stats2 = data2.stats;
         setSrc2(data2.sprites.other["official-artwork"].front_default);
         setName2(data2.name);
-
         settotal1(calculateTotal(stats1)) ;
         settotal2(calculateTotal(stats2)) ;
-
         setPokemon1Stats(stats1);
         setPokemon2Stats(stats2);
-
         if (total1 > total2) {
-          setComparisonResult(`${data1.name} est plus fort que ${data2.name}`);
+          setComparaisonResult(`${data1.name} est plus fort que ${data2.name}`);
         } else if (total1 < total2) {
-          setComparisonResult(`${data2.name} est plus fort que ${data1.name}`);
-        } else {
-          setComparisonResult("C'est un match nul !");
+          setComparaisonResult(`${data2.name} est plus fort que ${data1.name}`);
+        } else if (total1 === total2){
+          setComparaisonResult("C'est un match nul !");
         }
       }
     } catch (error) {
@@ -136,14 +132,12 @@ const PokemonComparison = () => {
       <div>
         <br></br>
       </div>
-      {comparisonResult && (
+      {comparaisonResult && (
         <h5 className="comparison-result">
           Résultat de la comparaison - Total: &nbsp;
-          {pokemon1Stats && pokemon2Stats && (
             <span>
-             {comparisonResult} , Pokémon {name} : {total1}  || Pokémon  {name2} : {total2} <br></br>
+             {comparaisonResult} , Pokémon {name} : {total1}  || Pokémon  {name2} : {total2} <br></br>
             </span>
-          )}
         </h5>
       )}
     </div>
