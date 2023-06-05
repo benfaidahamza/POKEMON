@@ -53,11 +53,14 @@ const PokemonComparison = () => {
         settotal2(calculateTotal(stats2)) ;
         setPokemon1Stats(stats1);
         setPokemon2Stats(stats2);
-        if (total1 > total2) {
+        if (calculateTotal(stats1) > calculateTotal(stats2)) {
+          console.log(1)
           setComparaisonResult(`${data1.name} est plus fort que ${data2.name}`);
-        } else if (total1 < total2) {
+        } else if (calculateTotal(stats1) < calculateTotal(stats2)) {
+          console.log(2)
           setComparaisonResult(`${data2.name} est plus fort que ${data1.name}`);
-        } else if (total1 === total2){
+        } else if (calculateTotal(stats1) === calculateTotal(stats2)) {
+          console.log(0)
           setComparaisonResult("C'est un match nul !");
         }
       }
